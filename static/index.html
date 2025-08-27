@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>菜品识别</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 提示条 -->
+  <div id="toast" class="toast"></div>
+
+  <h2>🍴 菜品识别</h2>
+
+  <!-- 📷 摄像头取景框容器 -->
+  <div class="video-container">
+    <video id="video" autoplay playsinline></video>
+  </div>
+
+  <!-- 添加模板 -->
+  <div class="controls">
+    <input type="text" id="dishName" placeholder="输入菜品名称">
+    <button onclick="captureTemplate()">拍照添加模板</button>
+    <button onclick="saveTemplate()">保存模板</button>
+  </div>
+
+  <!-- 临时预览 -->
+  <div id="preview"></div>
+
+  <!-- 阈值滑块 -->
+  <div class="threshold">
+    <label>识别阈值:
+      <input type="range" id="threshold" step="0.05" min="0" max="1" value="0.7">
+      <span id="thresholdValue">0.70</span>
+    </label>
+  </div>
+
+  <!-- 识别结果 -->
+  <div id="result">识别结果: -</div>
+
+  <!-- 模板列表 -->
+  <div id="templates"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
