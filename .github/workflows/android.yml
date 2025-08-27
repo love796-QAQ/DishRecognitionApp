@@ -20,11 +20,14 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Grant execute permission for gradlew   # ✅ 关键一步
+      - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Build with Gradle
-        run: ./gradlew assembleRelease
+      - name: Verify Gradle Wrapper version
+        run: ./gradlew --version
+
+      - name: Build with Gradle (Release)
+        run: ./gradlew assembleRelease --warning-mode all
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
