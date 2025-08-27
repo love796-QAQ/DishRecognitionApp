@@ -51,6 +51,7 @@ models/
 *.tar
 *.gz
 *.tmp
+templates_store/
 
 # =========================
 # 压缩包和临时文件
